@@ -1,0 +1,47 @@
+@use "@angular/material" as mat;
+
+@include mat.core();
+
+$portfolio-primary: mat.define-palette(mat.$indigo-palette);
+$portfolio-accent: mat.define-palette(mat.$pink-palette, A200, A100, A400);
+
+$portfolio-warn: mat.define-palette(mat.$red-palette);
+
+$portfolio-theme: mat.define-light-theme(
+  (
+    color: (
+      primary: $portfolio-primary,
+      accent: $portfolio-accent,
+      warn: $portfolio-warn,
+    ),
+  )
+);
+
+@include mat.all-component-themes($portfolio-theme);
+
+html,
+body {
+  height: 100%;
+  background-color: #80808017 !important;
+  overflow: hidden;
+}
+body {
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+  overflow-y: scroll;
+  overflow-x: hidden;
+}
+
+::-webkit-scrollbar {
+  width: 4px;
+  height: 7px;
+}
+::-webkit-scrollbar-track {
+  background: #F2F2F2;
+  border-radius: 20px;
+  box-shadow: none;
+}
+::-webkit-scrollbar-thumb {
+  background: #AEAEAE;
+  border-radius: 20px;
+}
